@@ -217,7 +217,7 @@ assignment-11/
 - **Charts**: Recharts
 
 ## Author
-*Your name here*
+Redwan Ahmmed
 
 ## License
 MIT

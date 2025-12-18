@@ -23,9 +23,9 @@ const Home = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="hero min-h-[600px] bg-gradient-to-r from-primary/20 to-secondary/20"
+                className="hero min-h-[600px] bg-gradient-to-r from-primary/20 to-secondary/20 relative overflow-hidden"
             >
-                <div className="hero-content text-center">
+                <div className="hero-content text-center z-10">
                     <div className="max-w-3xl">
                         <motion.h1
                             initial={{ opacity: 0, y: 30 }}
@@ -59,6 +59,10 @@ const Home = () => {
                         </motion.div>
                     </div>
                 </div>
+
+                {/* Background Decoration */}
+                <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none" />
+                <div className="absolute bottom-0 left-0 w-1/3 h-full bg-gradient-to-r from-secondary/5 to-transparent pointer-events-none" />
             </motion.section>
 
             {/* Featured Clubs Section */}

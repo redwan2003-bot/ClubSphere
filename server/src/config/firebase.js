@@ -10,8 +10,14 @@ const serviceAccount = {
     clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
 };
 
-admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-});
+try {
+    admin.initializeApp({
+        credential: admin.credential.cert(serviceAccount),
+    });
+    console.log('✅ Firebase Admin Initialized');
+} catch (error) {
+    console.warn('⚠️ Firebase Admin Initialization Failed (Check your FIREBASE_PRIVATE_KEY)');
+    console.warn('   Auth features will not work, but the server will run.');
+}
 
 export default admin;
