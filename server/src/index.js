@@ -74,4 +74,10 @@ const startServer = async () => {
     }
 };
 
-startServer();
+// Only start server if not running in production or if explicitly requested
+// Vercel handles the server start in production environments
+if (process.env.NODE_ENV !== 'production') {
+    startServer();
+}
+
+export default app;
